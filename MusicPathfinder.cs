@@ -166,7 +166,7 @@ public static class MusicPathfinder
     private static List<EventAction> actionQueueBlocking = new List<EventAction>();
     private static List<CoroutineAction> actionQueueNonblocking = new List<CoroutineAction>();
 
-    public static void Initialize(string fileName)
+    public static void Initialize(string[] data)
     {
         VersionInfo = new VersionInfoData();
         Variables.Clear();
@@ -174,8 +174,6 @@ public static class MusicPathfinder
         Tracks.Clear();
         Nodes.Clear();
         Events.Clear();
-
-        string[] data = File.ReadAllText(Path.GetFullPath(Application.dataPath + "/../Data/"+ fileName + ".txt")).Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
 
         LoadData(data);
     }
