@@ -119,8 +119,8 @@ public static class MusicPathfinder
         "CURRENTPART",
         "CURRENTSECTION",
         "VOLUME",
-        // not needed:
         "CONTROLLER",
+        // not needed:
         "SPECIALVALUE_BAD",
         "EVENTEXPIRY",
         "EVENTPRIORITY",
