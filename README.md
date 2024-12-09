@@ -18,11 +18,11 @@ Example usage in Unity:
 
     IEnumerator PlayPursuit()
     {
-		    source.Stop();
+        source.Stop();
         source2.Stop();
         source.clip = null;
         source2.clip = null;
-		    yield return 0;
+        yield return 0;
 
         MusicPathfinder.PlayTrack(this, 0);
 
@@ -35,7 +35,7 @@ Example usage in Unity:
         AudioClip currentClip = null;
 
         while (true)
-		    {
+        {
             if (AudioSettings.dspTime >= nextNodeTime || forceEnd)
             {
                 if (forceEnd)
