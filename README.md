@@ -1,5 +1,5 @@
 # MPFPathfinder
-Dynamic Player for MPF files produced by [MPFmaster]([https://pages.github.com/](https://github.com/xan1242/MPFmaster)).
+Dynamic Player for MPF files produced by [MPFmaster]([https://pages.github.com/](https://github.com/xan1242/MPFmaster)). This is not a feature complete implementation, but it's sufficient for playing back NFS Most Wanted and NFS Carbon files.
 
 ## Usage
 
