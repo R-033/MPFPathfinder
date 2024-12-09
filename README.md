@@ -9,7 +9,7 @@ Example usage in Unity:
     void Start()
     {
         string fileName = "cb_mus_" + index;
-        string[] data = File.ReadAllText(Path.GetFullPath(Application.dataPath + "/../Data/" + fileName + ".txt")).Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToArray()
+        string[] data = File.ReadAllText(Path.GetFullPath(Application.dataPath + "/../Data/" + fileName + ".txt")).Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
         MusicPathfinder.Initialize(data);
         StartCoroutine(PlayPursuit());
     }
