@@ -879,13 +879,15 @@ public static class MusicPathfinder
         throw new Exception("unsupported special variable " + name);
     }
 
-    private static int ParseHex(string hex)
+
+    private static int ParsePossibleHex(string hex)
     {
         if (hex.StartsWith("0x"))
         {
             hex = hex.Substring(2);
+            return Convert.ToInt32(hex, 16);
         }
-        return Convert.ToInt32(hex, 16);
+        return Convert.ToInt32(hex);
     }
 
     private static List<EventAction> ParseEventAction(string[] data, ref int lineNum)
@@ -915,8 +917,8 @@ public static class MusicPathfinder
 
             var tokens = line.Split(new string[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries);
 
-            int track = ParseHex(tokens[0].Replace("(", "").Replace(",", ""));
-            int sectionId = ParseHex(tokens[1].Replace(")", ""));
+            int track = ParsePossibleHex(tokens[0].Replace("(", "").Replace(",", ""));
+            int sectionId = ParsePossibleHex(tokens[1].Replace(")", ""));
 
             tokens = tokens.Skip(2).ToArray();
 
@@ -1157,8 +1159,8 @@ public static class MusicPathfinder
 
                         var tokens2 = line2.Split(new string[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries);
 
-                        int track2 = ParseHex(tokens2[0].Replace("(", "").Replace(",", ""));
-                        int sectionId2 = ParseHex(tokens2[1].Replace(")", ""));
+                        int track2 = ParsePossibleHex(tokens2[0].Replace("(", "").Replace(",", ""));
+                        int sectionId2 = ParsePossibleHex(tokens2[1].Replace(")", ""));
 
                         tokens2 = tokens2.Skip(2).ToArray();
 
